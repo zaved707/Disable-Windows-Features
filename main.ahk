@@ -5,13 +5,14 @@
 #Include gui\functions.ahk
 
 
-allFeatures := [
-    "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\CrossDeviceResume.exe",
-    "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe",
-    "C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe",
-    "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe",
+
+#Include FeaturesToDisable.ahk
+    ; "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\CrossDeviceResume.exe",
+    ; "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe",
+    ; "C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe",
+    ; "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe",
     ; "D:\Desktop\deadass.txt"
-]
+
 myGui := Gui("", "Windows Features Remover")
 myGui.SetFont("s14", "Segoe UI")
 myGui.Add("Text" ,"w250" , "Select function")
@@ -20,6 +21,7 @@ for index,targetPath in allFeatures{
     status := logic.getItemStatus(targetPath)
     fileName := fileOperations.getFileName(targetPath)
     ; myGui.Add("Text" , " " , fileName)
+    ; myGui.Add("Text" ,,status)
     checkbox := myGui.Add("Checkbox", "x10 check3 ",fileName)
     logic.setUpCheckbox(checkbox, targetPath)
     checkbox.OnEvent("click", handleCheckmarkClick.Bind(targetPath))

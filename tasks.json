@@ -1,0 +1,20 @@
+[
+  {
+    "isPinned": false,
+    "isDone": false,
+    "index": 0,
+    "text": "read file parameter and run take ownership only if no ownership right are provided"
+  },
+  {
+    "isPinned": false,
+    "isDone": false,
+    "index": 1,
+    "text": "enable all at once or disable all at once"
+  },
+  {
+    "isPinned": false,
+    "isDone": false,
+    "index": 2,
+    "text": "completely hide unavailiable mods"
+  }
+]
